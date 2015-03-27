@@ -1,0 +1,285 @@
+<head>
+   <meta charset="utf-8">
+   <title>Forecast | Home</title>
+ <link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/my.css" rel="stylesheet">
+ <script src="./js/jquery-2.1.1.min.js" ></script>
+ <script src="./js/bootstrap.min.js"></script>
+ <script src= "./js/claudy.js"> </script>
+ <script src= "./js/my.js"> </script>
+ <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="./css/demo.css" />
+		 <link rel="stylesheet" type="text/css" href="./css/css.css" />
+       
+        <link rel="stylesheet" type="text/css" href="./css/graph.css" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/my.css" rel="stylesheet">
+ <script src= "./js/js.js"> </script>
+ </head>
+
+
+ 
+     <div class="container-fluid">    
+	 
+	 <div class="row">
+	 
+	 <div class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">CGI</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-inverse-collapse">
+    <ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forecast <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="../Forecase App/forecastupdatecalender.html">Update Forecast</a></li>
+		
+          	  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Employee<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="../Forecase App/forcastaddemployee.html">Add Employee</a></li>
+          <li><a href="../Forecase App/forcasteditemployee.html">Edit Archive Employee</a></li>
+		  		 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Calendar<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+       <li><a href="../Forecase App/forecastaddcalender.html">Add Calendar</a></li>
+          	  		 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Groups / Projects<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Add Projects</a></li>
+          <li><a href="#">Edit Projects</a></li>
+		   <li><a href="#">Add Group</a></li>
+          <li><a href="#">Edit Group</a></li>
+		  		 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">View Forecast<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+         <!--  <li><a href="#">Modify Forecast</a></li> -->
+          <li><a href="../Forecase App/viewforcast.html">View Forecast</a></li>
+		 <!--  <li><a href="#">View Defaulters List</a></li> -->
+				 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav navbar-right">
+	 <li><a href="#">Change Password</a></li>
+	  <li><a href="#">Sign Out</a></li>
+       
+    </ul>
+	   
+  </div>
+</div>
+
+
+<!-- Start of Groups Panel-->
+<div class="col-md-10 col-md-offset-1">
+    <label for="inputPSAID">Finantial Year</label>
+<select class="form-control" id="PSA_ID" style="width:200px;">
+          <option>2014-2015</option>
+          <option>2015-2016</option>
+                 </select><br/>
+<div class="panel panel-primary">
+
+  <div class="panel-heading">
+    <h3 class="panel-title">
+	Groups&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Total Revenue = USD 500,000
+</h3>
+  </div>
+  <div class="panel-body">  <!-- Start Panel Body-->
+ 
+  <form role="form" class="form-inline" >
+  Groups<select class="form-control" id="Groups" style="width:200px;">
+          <option>----</option>
+          <option>----</option>
+          <option>----</option>
+          <option>----</option>
+          <option>----</option>
+
+        </select> <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<div align="center">
+		<!--  <button id="RenderPortfolio_Btn">All</button> -->
+		 <button id="Quarter1">Quarter 1</button>
+		  <button id="Quarter2">Quarter 2</button>
+		   <button id="Quarter3">Quarter 3</button>
+		    <button id="Quarter4">Quarter 4</button>
+</div>
+
+<div>
+ <main>
+  <h5 align="center">Total Hours</h5>
+  <div id="bar-chart"></div></main>
+  </div>
+  <iframe ui-sref="utilizationHours" scrolling="no" seamless="seamless" style="width:100%;height:600px;" ></iframe>
+  </div> <!-- End Panel Body-->
+</div>
+</div>
+ <!-- End of Groups Panel-->
+
+<!-- Start of Groups Panel-->
+<div class="col-md-10 col-md-offset-1">
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Projects
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Total Revenue = USD 500,000
+</h3>
+  </div>
+  <div class="panel-body">
+  <!-- Start Panel Body-->
+    	 Projects<select class="form-control" id="Projects" style="width:200px;">
+	          <option>----</option>
+	          <option>----</option>
+	          <option>----</option>
+	          <option>----</option>
+	          <option>----</option>
+	
+	        </select>
+			<br/>
+			<div align="center">
+<!--  <button id="RenderPortfolio_Btn1">All</button> -->
+		 <button id="Quarter5">Quarter 1</button>
+		  <button id="Quarter6">Quarter 2</button>
+		   <button id="Quarter7">Quarter 3</button>
+		    <button id="Quarter8">Quarter 4</button></div>
+
+			 <main>
+  <h5 align="center">Total Hours</h5>
+  <div id="bar-chart1"></div></main>
+  <!--Start of graph [Group total hours]-->
+   <div>
+            <!-- Codrops top bar -->
+                       <section class="main">
+					
+ 
+                <input type="radio" name="resize-graph" id="graph-small" />
+                <input type="radio" name="resize-graph" id="graph-normal" checked="checked" />
+                <input type="radio" name="resize-graph" id="graph-large" />
+
+				
+                <input type="radio" name="paint-graph" id="graph-blue" checked="checked" />
+                <input type="radio" name="paint-graph" id="graph-green" />
+                <input type="radio" name="paint-graph" id="graph-rainbow" />
+
+				
+               <!--  <input type="radio" name="fill-graph" id="f-none" /><label for="f-none">All</label> -->
+                <input type="radio" name="fill-graph" id="f-product1" checked="checked" /><label for="f-product1">Quarter1</label>
+                <input type="radio" name="fill-graph" id="f-product2" /><label for="f-product2">Quarter2</label>
+                <input type="radio" name="fill-graph" id="f-product3" /><label for="f-product3">Quarter3</label>
+                <input type="radio" name="fill-graph" id="f-product4" /><label for="f-product4">Quarter4</label>
+				<br/><br/><br/>
+		<label align="left" for="f-product1">Utilize Hours
+		</label><br/>
+                <ul class="graph-container">
+                    <li>
+                        <span>October</span>
+                        <div class="bar-wrapper">
+                            <div class="bar-container">
+                                <div class="bar-background"></div>
+                                <div class="bar-inner">25</div>
+                                <div class="bar-foreground"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span>November</span>
+                        <div class="bar-wrapper">
+                            <div class="bar-container">
+                                <div class="bar-background"></div>
+                                <div class="bar-inner">50</div>
+                                <div class="bar-foreground"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span>December</span>
+                        <div class="bar-wrapper">
+                            <div class="bar-container">
+                                <div class="bar-background"></div>
+                                <div class="bar-inner">75</div>
+                                <div class="bar-foreground"></div>
+                            </div>
+                        </div>
+                    </li>
+                   <!--  <li>
+                        <span>2011</span>
+                        <div class="bar-wrapper">
+                            <div class="bar-container">
+                                <div class="bar-background"></div>
+                                <div class="bar-inner">100</div>
+                                <div class="bar-foreground"></div>
+                            </div>
+                        </div>
+                    </li> -->
+                  <!--   <li>
+                        <span>2012</span>
+                        <div class="bar-wrapper">
+                            <div class="bar-container">
+                                <div class="bar-background"></div>
+                                <div class="bar-inner">50</div>
+                                <div class="bar-foreground"></div>
+                            </div>
+                        </div>
+                    </li> -->
+                    <li>
+                        <ul class="graph-marker-container">
+						
+						<li style="bottom:0%;"><span>10</span></li>
+                            <li style="bottom:25%;"><span>20</span></li>
+                            <li style="bottom:50%;"><span>30</span></li>
+                            <li style="bottom:75%;"><span>40</span></li>
+                            <li style="bottom:100%;"><span>50</span></li>
+							 </ul>
+                    </li>
+                </ul>
+
+            </section>
+
+        </div>
+		<!--End group total hours-->
+
+    </form>
+  </div> <!-- End Panel Body-->
+</div>
+
+</div>
+ <!-- End of Groups Panel-->
+	 
+	 </div>
+	
+	</div>
+   
+  </body>
+ </html>

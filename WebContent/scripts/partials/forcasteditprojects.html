@@ -1,0 +1,139 @@
+<head>
+   <meta charset="utf-8">
+   <title>Projects List</title>
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/my.css" rel="stylesheet">
+ <script src="./js/jquery-2.1.1.min.js" ></script>
+ <script src="./js/bootstrap.min.js"></script>
+ <script src= "./js/claudy.js"> </script>
+ <script src= "./js/my.js"> </script>
+ 
+ </head>
+ 
+     <div class="container-fluid">    
+	 
+	 <div class="row">
+	 
+	 <div class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">CGI</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-inverse-collapse">
+    <ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forecast <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+                     <li><a ui-sref="updateForecast">Update Forecast</a></li>
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Employee<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="addStudent">Add Employee</a></li>
+          <li><a ui-sref="studentList">Edit Member</a></li>
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Calendar<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="addCalendar">Add Calendar</a></li>
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Groups / Projects<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="addProject">Add Projects</a></li>
+          <li><a href="#">Edit Projects</a></li>
+		   <li><a href="#">Add Group</a></li>
+          <li><a href="#">Edit Group</a></li>
+		  		 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">View Forecast<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="viewForeCast">View Forecast</a></li>
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav navbar-right">
+	  <li><a href="#">Change Password</a></li>
+	  <li><a href="#">Sign Out</a></li>
+    </ul>
+	   
+  </div>
+</div>
+
+<!-- Start of Add Member Panel-->
+<div class="col-md-10 col-md-offset-1">
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Edit/Delete Projects</h3>
+  </div>
+  <div class="panel-body">  <!-- Start Panel Body-->
+ 
+  <form role="form" class="form-inline" >
+   <table class="table borderless" >
+    <tr>
+      <td>
+         <label for="PSAID">Project ID</label>
+      </td>
+      <td>
+         <label for="FirstName">Project Name</label>
+      </td>
+      <td>
+ 		<label for="name">Project Desc</label>
+	  </td>
+	  <td>
+ 		<label for="edit">Edit</label>
+	  </td>
+	  <td>
+ 		<label for="delete">Delete</label>
+	  </td>
+	</tr>
+
+	<tr ng-repeat="stu in projects track by $index">
+    	<td>
+			{{stu.projectId}}
+		</td>
+		<td>
+			{{stu.projectName}}
+		</td>
+		<td>
+			{{stu.projectDesc}}
+		</td>
+		<td>
+			<a ui-sref="updateProject({projectId: stu.projectId})">Edit</a>
+		</td>
+		<td>
+			<a href="" ng-click="deleteProject(stu.projectId)">Delete</a>
+		</td>
+	</tr>
+  </table>
+    </form>
+  </div> <!-- End Panel Body-->
+</div>
+</div>
+	 <!-- End of Add Member Panel-->
+	 </div>
+	</div>
+  </body>
+ </html>

@@ -1,0 +1,274 @@
+
+<head>
+   <meta charset="utf-8">
+   <title>Forecast | Home</title>
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/my.css" rel="stylesheet">
+ <script src="./js/jquery-2.1.1.min.js" ></script>
+ <script src="./js/bootstrap.min.js"></script>
+ <script src= "./js/claudy.js"> </script>
+ <script src= "./js/my.js"> </script>
+ </head>
+ 
+     <div class="container-fluid">    
+	 <div class="row">
+	 <div class="navbar navbar-inverse">
+     <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">CGI</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-inverse-collapse">
+    <ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forecast <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+                     <li><a ui-sref="updateForecast">Update Forecast</a></li>
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Employee<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <!-- <li><a href="forcastaddemployee.html">Add Employee</a></li> -->
+          <li><a ui-sref="addStudent">Add Employee</a></li>
+          <li><a ui-sref="studentList">Edit Member</a></li>
+		  		 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Calendar<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="getCalendar">Add Calendar</a></li>
+          	  		 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Groups / Projects<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="addProject">Add Projects</a></li>
+          <li><a ui-sref="projectsList">Edit Projects</a></li>
+		   <li><a href="#">Add Group</a></li>
+          <li><a href="#">Edit Group</a></li>
+		  		 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">View Forecast<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="viewForeCast">View Forecast</a></li>
+				 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav navbar-right">
+	  <li><a href="#">Change Password</a></li>
+	  <li><a href="#">Sign Out</a></li>
+    </ul>
+	   
+  </div>
+</div>
+
+<br/>
+<br/>
+<br/>
+<!-- Start of Add Member Panel-->
+<div class="col-md-10 col-md-offset-1">
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add Member</h3>
+  </div>
+  <div class="panel-body">  <!-- Start Panel Body-->
+ 
+  <form role="form" class="form-inline"  name="updateStudentForm" novalidate ng-submit="createStudent(student)">
+   <table class="table borderless" >
+  
+  <tr>
+  <td> 
+  <div class="form-group" >
+    <label for="inputPSAID">PSA ID</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input style="width:200px;" type="text" class="form-control" name="psaId" ng-model="student.psaId" placeholder="PSA ID"/>
+  </div> 
+ <!-- </form>-->
+  </td>
+  
+  <td>
+  <!-- <form role="form" class="form-inline" class="col-md-12">-->
+  <div class="form-group">
+    <label for="inputFirstName">First Name</label>&nbsp;
+    <input style="width:200px;" type="text" class="form-control" name="firstName" ng-model="student.firstName" placeholder="First Name"/>
+  </div>
+   <!--</form>-->
+  </td>
+
+  <td>
+   <!--<form role="form" class="form-inline" class="col-md-12">-->
+    <div class="form-group">
+    <label for="inputLastName">Last Name</label>
+    <input style="width:200px;" type="text" class="form-control" name="lastName" ng-model="student.lastName" placeholder="Last Name"/>
+  </div>
+   <!--</form>-->
+  </td>
+  </tr>
+  
+    <tr>
+  <td>
+  
+  <div class="form-group" >
+    <label for="designation">Designation</label>
+<select class="form-control" name="designation" ng-model="student.designation" style="width:200px;">
+          <option>Associate Software Engineer</option>
+          <option>Software Engineer</option>
+          <option>Senior Software Engineer</option>
+          <option>Lead Analyst</option>
+          <option>Associate Consultant</option>
+<option>Consultant</option>
+<option>Senior Consultant</option>
+<option>Executive Consultant</option>
+<option>Director</option>
+<option>Vice President</option>
+        </select>
+        
+    <!--  <select name="" ng-model="select_item" ng-options="person.groupName for person in groupsAndProjects">
+    <option>Choose a name</option>
+    </select> -->
+    
+  </div> 
+  </td>
+  
+  <td>
+  <div class="form-group">
+    <label for="inputBillingRate">Billing Rate</label>
+    <input style="width:200px;" type="text" class="form-control" name="billingRate" ng-model="student.billingRate" placeholder="USD">
+  </div>
+  </td>
+  <td class="text-left text-center">
+    <div class="form-group">
+<div class="checkbox" >
+          <label>
+            <input type="checkbox" checked="checked" name="billable" ng-model="student.billable"> Billable
+          </label>
+        </div>
+    
+  </div>
+
+  </td>
+  </tr>
+  
+<tr style="border-bottom:1pt solid black;">
+ <td align="center"><div class="form-group">
+<div class="checkbox" >
+          <label>
+            <input type="checkbox" checked="checked" name="memberGroup" ng-model="student.memberGroup"> Member
+          </label>
+        </div>
+    
+  </div>
+</td>
+<td align="center"><div class="form-group">
+<div class="checkbox" >
+          <label>
+            <input type="checkbox" name="adminGroup" ng-model="student.adminGroup"> Admin
+          </label>
+        </div>
+    
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="checkbox" >
+          <label>
+            <input type="checkbox" name="projectMgrGroup" ng-model="student.projectMgrGroup"> Project Manager
+          </label>
+        </div>
+    
+  </div>
+</td>
+ <!-- <td align="center"><div class="form-group">
+<div class="checkbox" >
+          <label>
+            <input type="checkbox" name="groups"> Groups
+          </label>
+        </div>
+    
+  </div>
+</td> -->
+</tr>
+<tr>
+<td colspan="3">&nbsp;</td>
+</tr>
+<tr >
+<td colspan="3">
+<div class="form-group" >
+    <label for="designation">Projects</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select class="form-control" name="projects" ng-model="student.projects" style="width:200px;">
+          <option>Trade360</option>
+          <option>CACS</option>
+          <option>BESS</option>
+          <option>EG</option>
+          <option>Mvest</option>
+          <option>Prime Base</option>
+          <option>E Settlement</option>
+          
+          
+        </select>
+    
+  </div> 
+</td>
+</tr>
+<tr>
+<td  colspan="3">
+<div class="form-group" >
+    <label for="designation">Groups</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select class="form-control" name="groups" style="width:200px;" ng-model="student.groups">
+          <option>FSG</option>
+          <option>GWCM</option>
+        </select>
+    
+  </div>
+</td>
+</tr>
+<tr>
+<td>
+    <label for="designation">CGI DOJ</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input style="width:200px;" type="date" class="form-control" ng-model="student.cgiDoj" />
+</td>
+</tr>
+<tr>
+<td>
+    <label for="designation">FSG DOJ</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input style="width:200px;" type="date" class="form-control" ng-model="student.fsgDoj" />
+</td>
+</tr>
+<tr>
+<td colspan="3" align="center">
+<input type="submit" name="Submit" class="btn btn-primary"/>
+</td>
+</tr>
+  </table>
+    </form>
+  </div> <!-- End Panel Body-->
+</div>
+
+</div>
+	 <!-- End of Add Member Panel-->
+	 </div>
+	
+	</div>
+	
+	 
+     
+		

@@ -1,0 +1,400 @@
+ <head>
+   <meta charset="utf-8">
+   <title>Forecast | Home</title>
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/my.css" rel="stylesheet">
+ <script src="./js/jquery-2.1.1.min.js" ></script>
+ <script src="./js/bootstrap.min.js"></script>
+ <script src= "./js/claudy.js"> </script>
+ <script src= "./js/my.js"> </script>
+ 
+ </head>
+ 
+ 
+     <div class="container-fluid">    
+	 
+	 <div class="row">
+	 
+	 <div class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">CGI</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-inverse-collapse">
+    <ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forecast <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+                     <li><a ui-sref="updateForecast">Update Forecast</a></li>
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Employee<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="addStudent">Add Employee</a></li>
+          <li><a ui-sref="studentList">Edit Member</a></li>
+		  		 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Calendar<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="addCalendar">Add Calendar</a></li>
+          	  		 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Groups / Projects<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Add Projects</a></li>
+          <li><a href="#">Edit Projects</a></li>
+		   <li><a href="#">Add Group</a></li>
+          <li><a href="#">Edit Group</a></li>
+		  		 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">View Forecast<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Modify Forecast</a></li>
+          <li><a href="#">View Forecast</a></li>
+		  <li><a href="#">View Defaulters List</a></li>
+				 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav navbar-right">
+	  <li><a href="#">Change Password</a></li>
+	  <li><a href="#">Sign Out</a></li>
+    </ul>
+	   
+  </div>
+</div>
+
+<!-- Start of Add Member Panel-->
+<div class="col-md-10 col-md-offset-1">
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add Calender</h3>
+  </div>
+  <div class="panel-body">  <!-- Start Panel Body-->
+ 
+  <form role="form" class="form-inline" ng-submit="createCalendar(getAllQutarData)">
+   <table class="table borderless" >
+   <tr>
+
+  <td colspan="4" style="border-bottom:1pt solid black;"> 
+  <div class="form-group" >
+    <label for="financial_year">Financial Year</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <select class="form-control" ng-model="student.year" ng-change="getCalendarData()" id="financialyear" style="width:200px;">
+		  <option>2014-2015</option>
+          <option>2015-2016</option>
+          <option>2016-2017</option>
+          <option>2017-2018</option>
+         
+        </select>
+  </div> 
+  </td>  
+  </tr>
+
+<!--Q1-->
+<tr >
+ <td colspan="4">
+ <div class="form-group" >
+    <label for="quarter1"><font size="4" color="blue">Quarter 1</font></label>
+  </div> 
+  </td>
+</tr>
+  <tr>
+  <td>
+   <label for="october">October</label>
+  </td>
+  
+  <td>
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q1OctStartDate" />
+  </td>
+  <td>   
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q1OctEndDate" />
+  </td>
+
+  <td>
+    <input style="width:200px;" type="number" size="10" class="form-control" ng-model="getAllQutarData.q1OctNoOfHours" placeholder="time in hrs"/>
+  </td>
+  </tr>
+
+ <tr>
+   <td>
+   <label for="Nov">November</label>
+  </td>
+   <td> 
+ 
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q1NovStartDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q1NovEndDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="number" min="0"  class="form-control" ng-model="getAllQutarData.q1NovNoOfHours" placeholder="time in hrs"/>
+  </td>
+  </tr>
+  
+   <tr>
+     <td>
+   <label for="dec">December</label>
+  </td>
+   <td> 
+ 
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q1DecStartDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q1DecEndDate" />
+  </td>
+
+ <td  >
+    <input style="width:200px;" type="number" size="10" class="form-control" ng-model="getAllQutarData.q1DecNoOfHours" placeholder="time in hrs"/>
+  </td>
+  </tr>
+  
+  <!--Q2-->
+   <tr>
+ <td colspan="3">
+ <div class="form-group" >
+    <label for="quarter1"><font size="4" color="blue">Quarter 2</font></label>
+  </div> 
+  </td>
+</tr>
+
+  <tr>
+    <td>
+   <label for="jan">January</label>
+  </td>
+  <td>
+  
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q2JanStartDate" />
+  </td>
+
+ <td>   
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q2JanEndDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="number"  class="form-control" ng-model="getAllQutarData.q2JanNoOfHours" placeholder="time in hrs"/>
+  </td>
+  </tr>
+
+
+ <tr>
+   <td>
+   <label for="feb">February</label>
+  </td>
+   <td> 
+   
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q2FebStartDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q2FebEndDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="number" class="form-control" ng-model="getAllQutarData.q2FebNoOfHours" placeholder="time in hrs"/>
+  </td>
+  </tr>
+  
+   <tr>
+     <td>
+   <label for="mar">March</label>
+  </td>
+   <td> 
+ 
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q2MarStartDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q2MarEndDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="number" class="form-control" ng-model="getAllQutarData.q2MarNoOfHours" placeholder="time in hrs"/>
+  </td>
+  </tr>
+  <!--Q3-->
+  <tr>
+ <td colspan="3">
+ <div class="form-group" >
+    <label for="quarter1"><font size="4" color="blue">Quarter 3</font></label>
+  </div> 
+  </td>
+</tr>
+
+  <tr>
+    <td>
+   <label for="apr">April</label>
+  </td>
+  <td>
+  <div class="form-group" >
+  
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q3AprStartDate" />
+  </td>
+
+ <td>   
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q3AprEndDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="number" class="form-control" ng-model="getAllQutarData.q3AprNoOfHours" placeholder="time in hrs"/>
+  </td>
+  </tr>
+
+
+ <tr>
+   <td>
+   <label for="may">May</label>
+  </td>
+   <td> 
+   
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q3MayStartDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q3MayEndDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="number" class="form-control" ng-model="getAllQutarData.q3MayNoOfHours" placeholder="time in hrs"/>
+  </td>
+  </tr>
+  
+   <tr>
+     <td>
+   <label for="june">June</label>
+  </td>
+   <td> 
+   
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q3JuneStartDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q3JuneEndDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="number" class="form-control" ng-model="getAllQutarData.q3JuneNoOfHours" placeholder="time in hrs"/>
+  </td>
+  </tr>
+  
+<!--Q4-->
+  <tr>
+ <td colspan="3">
+ <div class="form-group" >
+    <label for="quarter4"><font size="4" color="blue">Quarter 4</font></label>
+  </div> 
+  </td>
+</tr>
+
+  <tr>
+    <td>
+   <label for="july">July</label>
+  </td>
+  <td>
+ 
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q4JulyStartDate" />
+  </td>
+
+ <td>   
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q4JulyEndDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="number" class="form-control" ng-model="getAllQutarData.q4JulyNoOfHours" placeholder="time in hrs"/>
+  </td>
+  </tr>
+
+
+ <tr>
+  <td>
+   <label for="aug">August</label>
+  </td>
+   <td> 
+ 
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q4AugStartDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q4AugEndDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="number" class="form-control" ng-model="getAllQutarData.q4AugNoOfHours" placeholder="time in hrs"/>
+  </td>
+  </tr>
+  
+   <tr>
+   <td>
+      <label for="Sep">September</label>
+   </td>
+   <td> 
+ 
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q4SepStartDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="date" class="form-control" ng-model="getAllQutarData.q4SepEndDate" />
+  </td>
+
+ <td>
+    <input style="width:200px;" type="number" min="0"  class="form-control" ng-model="getAllQutarData.q4SepNoOfHours" placeholder="time in hrs"/>
+  </td>
+  </tr>
+  
+  <tr>
+  <td colspan="4" align="center">
+  <input type="submit" value="Save" class="btn btn-primary"/>
+  </td>
+  </tr>
+  </table>
+    </form>
+  </div> <!-- End Panel Body-->
+</div>
+
+</div>
+
+
+
+
+	 <!-- End of Add Member Panel-->
+	 
+	 </div>
+	
+	</div>
+	
+  
+	 
+     
+		
+   
+  </body>
+
+
+
+ </html>

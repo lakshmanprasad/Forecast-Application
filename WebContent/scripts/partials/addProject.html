@@ -1,0 +1,162 @@
+<head>
+   <meta charset="utf-8">
+   <title>Forecast | Home</title>
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/my.css" rel="stylesheet">
+ <script src="./js/jquery-2.1.1.min.js" ></script>
+ <script src="./js/bootstrap.min.js"></script>
+ <script src= "./js/claudy.js"> </script>
+ <script src= "./js/my.js"> </script>
+ 
+ </head>
+ 
+     <div class="container-fluid">    
+	 
+	 <div class="row">
+	 
+	 <div class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">CGI</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-inverse-collapse">
+    <ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forecast <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="updateForecast">Update Forecast</a></li>
+		
+          	  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Employee<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="addStudent">Add Employee</a></li>
+          <li><a ui-sref="studentList">Edit Archive Employee</a></li>
+		  		 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Calendar<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+       <li><a ui-sref="getCalendar">Add Calendar</a></li>
+          	  		 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Groups / Projects<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="addProject">Add Projects</a></li>
+          <li><a href="#">Edit Projects</a></li>
+		   <li><a href="#">Add Group</a></li>
+          <li><a href="#">Edit Group</a></li>
+		  		 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav">
+       <li class="dropdown"  class="active">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">View Forecast<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <!-- <li><a href="#">Modify Forecast</a></li> -->
+          <li><a ui-sref="viewForeCast">View Forecast</a></li>
+		<!--   <li><a href="#">View Defaulters List</a></li> -->
+				 		  
+		</ul>
+      </li>
+    </ul>
+	
+	<ul class="nav navbar-nav navbar-right">
+	 <li><a href="#">Change Password</a></li>
+	  <li><a href="#">Sign Out</a></li>
+       
+    </ul>
+	   
+  </div>
+</div>
+
+<br/>
+<br/>
+<br/>
+<!-- Start of Add Member Panel-->
+<div class="col-md-10 col-md-offset-1">
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add Member</h3>
+  </div>
+  <div class="panel-body">  <!-- Start Panel Body-->
+ 
+  <form role="form" class="form-inline"  name="updateStudentForm" novalidate ng-submit="createProject(project)">
+   <table class="table borderless" >
+  
+  <tr>
+  <td> 
+  <div class="form-group" >
+    <label for="inputPSAID">Project Name</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input style="width:200px;" type="text" class="form-control" name="projectName" ng-model="project.projectName" placeholder="Project Name"/>
+    
+  </div> 
+ <!-- </form>-->
+  </td>
+  
+  <td>
+  <!-- <form role="form" class="form-inline" class="col-md-12">-->
+  <div class="form-group">
+    <label for="inputFirstName">Project Description</label>&nbsp;
+    <!-- <textarea  class="form-control" cols="50"></textarea> -->
+    <input style="width:200px;" type="text" class="form-control" name="projectDesc" ng-model="project.projectDesc" placeholder="Project Description"/>
+    
+   </div>
+   <!--</form>-->
+  </td>
+
+
+  
+  </tr>
+  
+<tr>
+<td colspan="3" align="center">
+<input type="submit" value="Save" class="button"/> 
+</td>
+</tr>
+  </table>
+    </form>
+  </div> <!-- End Panel Body-->
+</div>
+
+</div>
+
+
+
+
+	 <!-- End of Add Member Panel-->
+	 
+	 </div>
+	
+	</div>
+	
+  
+	 
+     
+		
+   
+  </body>
+
+
+
+ </html>

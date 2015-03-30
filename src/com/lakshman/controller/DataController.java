@@ -1,6 +1,8 @@
 package com.lakshman.controller;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,6 +22,7 @@ import com.lakshman.domain.ForecastUserDetails;
 import com.lakshman.domain.Members;
 import com.lakshman.domain.Projects;
 import com.lakshman.domain.UpdateForecast;
+import com.lakshman.logger.ForecastLogger;
 import com.lakshman.service.UserService;
 
 @Controller
@@ -32,6 +35,8 @@ public class DataController {
 	@ResponseBody
 	public List<Members> getMembersList(HttpServletResponse response) {
 		List<Members> membersList = userService.getMembersList();
+		Logger LOGGER = ForecastLogger.getLogger(DataController.class.getName());
+		LOGGER.log(Level.SEVERE,"Inside getMembersList ::: "+membersList.size());
 		return membersList;
 	}
 	
